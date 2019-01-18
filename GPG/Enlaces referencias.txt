@@ -1,0 +1,4 @@
+
+https://help.github.com/articles/managing-commit-signature-verification/
+https://help.github.com/articles/signing-commits/
+https://github.com/settings/keys

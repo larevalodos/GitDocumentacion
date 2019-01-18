@@ -1,0 +1,140 @@
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$ gpg --full-generate-key
+gpg (GnuPG) 2.2.11-unknown; Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 15y
+Key expires at Fri Jan 13 22:57:54 2034 HSP
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: luis
+Name must be at least 5 characters long
+Real name: luis Arevalo
+Email address: larevalodos@gmail.com
+Comment: chiqui
+You selected this USER-ID:
+    "luis Arevalo (chiqui) <larevalodos@gmail.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /c/Users/elgor/.gnupg/trustdb.gpg: trustdb created
+gpg: key E727AB8DF74C5FFB marked as ultimately trusted
+gpg: directory '/c/Users/elgor/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/c/Users/elgor/.gnupg/openpgp-revocs.d/53BC573B891B7596005B0570E727AB8DF74C5FFB.rev'
+public and secret key created and signed.
+
+pub   rsa4096 2019-01-18 [SC] [expires: 2034-01-14]
+      53BC573B891B7596005B0570E727AB8DF74C5FFB
+uid                      luis Arevalo (chiqui) <larevalodos@gmail.com>
+sub   rsa4096 2019-01-18 [E] [expires: 2034-01-14]
+
+
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$ gpg --list-secret-keys --keyid-format LONG
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: next trustdb check due at 2034-01-14
+/c/Users/elgor/.gnupg/pubring.kbx
+---------------------------------
+sec   rsa4096/E727AB8DF74C5FFB 2019-01-18 [SC] [expires: 2034-01-14]
+      53BC573B891B7596005B0570E727AB8DF74C5FFB
+uid                 [ultimate] luis Arevalo (chiqui) <larevalodos@gmail.com>
+ssb   rsa4096/A73EDB671B134689 2019-01-18 [E] [expires: 2034-01-14]
+
+
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$ gpg --armor --export E727AB8DF74C5FFB
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+LnmFABNoOJ8kCCO88v0kbzdabCUv
+=1bv1
+-----END PGP PUBLIC KEY BLOCK-----
+
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$ git add .
+
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$ git commit -m 'GPG desde consola test commit'
+gpg: skipped "Luis Arevalo <larevalodos@gmail.com>": No secret key
+gpg: signing failed: No secret key
+error: gpg failed to sign the data
+fatal: failed to write commit object
+
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$ git config --global user.signingkey E727AB8DF74C5FFB
+
+elgor@S7 MINGW64 /f/gitHub/JHubDownTest (master)
+$
