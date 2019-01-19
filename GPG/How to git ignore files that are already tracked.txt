@@ -1,0 +1,109 @@
+How to git ignore files that are already tracked
+for all people who use  eclipse , they always don't want to track some kind of files like (.properties,.metadata ...) that are automatically created by eclipse .
+also the other problem is that git will not ignore a file that was already tracked before a rule was added to the file  .gitignore to ignore it 
+So what is the Solution ?
+In such a case , you should follow these two steps :
+files must be un-tracked, usually with  
+git rm --cached filename
+now they do not show up as "changed" but still show as untracked files in git status , so add some  exclude rules into .git/info/exclude  file in your repository 
+ 
+In case of Eclipse ,  do these two steps  to completely remove files and repositories from being tracked :
+execute this script after git add . :
+git rm --cached *.pydevproject
+git rm --cached *.project
+git rm --cached *.metadata
+git rm --cached */bin/**
+git rm --cached */tmp/**
+git rm --cached *.tmp
+git rm --cached *.bak
+git rm --cached *.swp
+git rm --cached *~.nib
+git rm --cached *local.properties
+git rm --cached *.classpath
+git rm --cached *.settings/*
+git rm --cached *.loadpath
+git rm --cached *org.eclipse.wst.common.component
+git rm --cached *org.eclipse.wst.common.project.facet.core.xml
+git rm --cached *.properties
+git rm --cached *.orig
+git rm --cached *.classpath
+git rm --cached *.xml
+git rm --cached *.jar
+git rm --cached *.class
+
+add this code to .git/info/exclude  file in your repository 
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+
+#Eclipse#
+###################
+ 
+*.pydevproject
+*.project
+*.metadata
+*/bin/*
+*/bin/
+*/tmp/**
+*.tmp
+*.bak
+*.swp
+*~.nib
+*local.properties
+*.classpath
+*.settings/*
+*.settings/
+*.loadpath
+*org.eclipse.wst.common.component
+*org.eclipse.wst.common.project.facet.core.xml
+*.properties
+*.orig
+*.classpath
+*.xml
+
+# Package Files #
+##################
+*.jar
+*.war
+*.ear
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
